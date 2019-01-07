@@ -64,7 +64,6 @@
               texture.magFilter = THREE.NearestFilter;
               const floor = new THREE.Mesh(
                   new THREE.PlaneGeometry(1000, 1000),
-                  new THREE.MeshStandardMaterial({map: texture, roughness: 0.0}),
               );
               floor.rotation.x = -Math.PI / 2;
               scene.add(floor);
