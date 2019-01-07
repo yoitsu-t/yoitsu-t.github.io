@@ -61,9 +61,12 @@
           {
               // 床のテクスチャー
               const texture = new THREE.TextureLoader().load('imgs/floor.png');
+              texture.wrapS = texture.wrapT = THREE.RepeatWrapping; // リピート可能に
+              texture.repeat.set(10, 10); // 10x10マスに設定
               texture.magFilter = THREE.NearestFilter;
               const floor = new THREE.Mesh(
                   new THREE.PlaneGeometry(1000, 1000),
+                  new THREE.MeshStandardMaterial({map: texture, roughness: 0.0, metalness: 0.0}),
               );
               floor.rotation.x = -Math.PI / 2;
               scene.add(floor);
